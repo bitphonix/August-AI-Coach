@@ -38,6 +38,18 @@ graph TD
     I --> B;
 ```
 
+❤️ Fine-Tuning for Personality
+While the RAG pipeline provides the factual "brain" for the AI, a distinct personality was required to meet the project's goal of being an empathetic coach. To achieve the specific "August AI" tone, the base Mistral-7B model was fine-tuned.
+
+The process involved:
+
+Curated Dataset Creation: A custom tone_dataset.json file was manually created, containing over 250 high-quality examples of instruction/response pairs that exemplify the desired supportive and gentle tone.
+
+Efficient Fine-Tuning with PEFT/LoRA: To avoid the massive computational cost of fully fine-tuning a 7-billion-parameter model, Parameter-Efficient Fine-Tuning (PEFT) was used. Specifically, the Low-Rank Adaptation (LoRA) technique was employed. LoRA works by freezing the pre-trained model weights and injecting small, trainable rank-decomposition matrices (called adapters) into the layers of the model.
+
+The Result: This process generated the lightweight lora_model_fixed adapters. When loaded on top of the base model, these adapters steer the AI's responses to match the empathetic personality defined in our custom dataset, without compromising the model's core linguistic capabilities.
+
+
 ## 🛠️ Technology Stack
 
 * **LLM**: [Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2)
