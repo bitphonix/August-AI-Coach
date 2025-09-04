@@ -1,0 +1,9 @@
+transformers
+peft
+accelerate
+bitsandbytes
+torch
+sentence-transformers
+faiss-cpu
+gradio
+pandas

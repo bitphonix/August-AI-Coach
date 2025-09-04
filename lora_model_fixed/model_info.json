@@ -1,0 +1,12 @@
+{
+  "model_name": "unsloth/mistral-7b-instruct-v0.2-bnb-4bit",
+  "training_config": {
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "max_steps": 30,
+    "learning_rate": 5e-05,
+    "final_loss": 1.5051
+  },
+  "dataset_size": 269,
+  "quality_check": "Fixed overfitting issue"
+}
